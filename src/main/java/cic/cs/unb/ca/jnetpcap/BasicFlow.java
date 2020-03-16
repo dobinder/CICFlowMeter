@@ -372,7 +372,7 @@ public class BasicFlow {
 
 	public void updateFlowBulk (BasicPacketInfo packet){
 
-		if(this.src == packet.getSrc()){
+		if(Arrays.equals(this.src, packet.getSrc())){
 			updateForwardBulk(packet,blastBulkTS);
 		}else {
 			updateBackwardBulk(packet,flastBulkTS);
@@ -1189,7 +1189,7 @@ public class BasicFlow {
 		dump.append(fAvgBytesPerBulk()).append(separator);							//63	
 		dump.append(fAvgPacketsPerBulk()).append(separator);						//64
 		dump.append(fAvgBulkRate()).append(separator);								//65
-		dump.append(fAvgBytesPerBulk()).append(separator);							//66
+		dump.append(bAvgBytesPerBulk()).append(separator);							//66
 		dump.append(bAvgPacketsPerBulk()).append(separator);						//67
 		dump.append(bAvgBulkRate()).append(separator);								//68
     	
